@@ -1,1 +1,16 @@
-<p>body works!</p>
+<div class="body p-4 text-primary-emphasis">
+  <h2>Your To-dos:</h2>
+  <ul>
+    @for (todo of todos; track $index) {
+    <li class="d-flex align-items-center p-2 justify-content-between">
+      <h2 [ngClass]="{ 'text-decoration-line-through': todo.checked }">
+        {{ todo.note }}
+      </h2>
+      <div class="controls d-flex align-items-center gap-3 h5">
+        <i class="bi bi-trash3-fill" (click)="removeTodo($index)"></i>
+        <i class="bi bi-check-lg" (click)="checkTodo($index)"></i>
+      </div>
+    </li>
+    }
+  </ul>
+</div>

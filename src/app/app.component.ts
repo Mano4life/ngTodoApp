@@ -11,8 +11,24 @@ import { BodyComponent } from './body/body.component';
 })
 export class AppComponent {
   title = 'todo';
+  checked = false;
+  todos: any[] = [{
+    note: 'add your note',
+    checked: false
+  }];
+
 
   addNewNote(note:string) {
-    console.log(note)
+    let newNote = {note: note, checked: false}
+    this.todos.push(newNote)
   }
+
+  removeTodo(index: number) {
+    this.todos.splice(index, 1);
+  }
+
+  checkTodo(index: number) {
+    this.todos[index].checked = !this.todos[index].checked
+  }
+
 }

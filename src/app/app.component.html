@@ -1,4 +1,4 @@
-<div class="container mt-5">
+<div class="container mt-5 bg-secondary-subtle p-0 rounded-4">
   <app-input-area (noteAdd)="addNewNote($event)"></app-input-area>
-  <app-body></app-body>
+  <app-body [todos]="todos" (removeTodoEmitter)="removeTodo($event)" (checkTodoEmitter)="checkTodo($event)"></app-body>
 </div>
